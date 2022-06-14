@@ -1,0 +1,1 @@
+Estes são os projetos realizados durante a fase de aprendizado, nos cursos nos quais participei.
