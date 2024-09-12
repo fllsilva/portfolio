@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    background-color: coral;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox .trace {
+    width: 90px;
+    height: 8px;
+    background-color: white;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+
+/* Definição das 3 barras horizontais */
+.checkbox .trace:nth-child(1) {
+    top: 26px;
+    transform: rotate(0);    
+}
+
+.checkbox .trace:nth-child(2) {
+    top: 46px;
+    transform: rotate(0);    
+}
+
+.checkbox .trace:nth-child(3) {
+    top: 66px;
+    transform: rotate(0);    
+}
+
+/* Oculta a caixa de controle do checkbox */
+#toggle {
+    display: none;
+}
+
+/* Define os efeitos quando o checkbox estiver marcado (selecionado) */
+/* A primeira barra gira para a diagonal esquerda */
+#toggle:checked + .checkbox .trace:nth-child(1) {
+    transform: rotate(45deg);
+    top: 47px;
+}
+
+/* A segunda barra corre para a esquerda até sair da borda da tela */
+#toggle:checked + .checkbox .trace:nth-child(2) {
+    transform: translateX(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* A terceira barra gira para a diagonal direita */
+#toggle:checked + .checkbox .trace:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 48px;
+}
